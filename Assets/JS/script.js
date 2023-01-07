@@ -4,12 +4,13 @@ var testEl = document.getElementById('test')
 var questionNum = -1
 var answerOption = document.getElementById('options')
 var score = 0
-var remainingTime = 5
+var remainingTime = 30
 var askQuestion = document.getElementById('question')
 var inputName = document.getElementById('name')
 var bigButton = document.getElementById('bigButton')
 var scoreBoard = document.getElementById('scoreName')
-
+var finalName = localStorage.getItem("inputName")
+var finalScore = localStorage.getItem("score")
 
 quiz = [
     {
@@ -29,8 +30,10 @@ quiz = [
     }
 ]
 
+timerEl.textContent = "Click start to begin. You have: " + remainingTime + " seconds."
 inputName.style.display = "none"
 bigButton.style.display = "none"
+
 //timer set timer remaining time for how long you get on the quiz
 function countdown() {
 var timer = setInterval(function () {
@@ -62,13 +65,15 @@ function checkAnswer () {
     if (remainingTime > 0) {
     if (actualAnswer === chosenAnswer) {
         score ++
+        scoreBoard.innerHTML = 'Correct'
         console.log(score)
     } else {
         remainingTime -=5
+        scoreBoard.innerHTML = 'Wrong'
     } 
     
     setTimeout(function(){
-        //checkAnswer ()
+        scoreBoard.innerHTML = ""
         next ()
     }, 1000) 
 } else {
@@ -86,7 +91,12 @@ function next(){
     answerOption.textContent = ""
     askQuestion.textContent = ""
 
+    if (questionNum === quiz.length){
+        remainingTime = 0
+    } 
     
+    // console.log (questionNum)
+    // console.log ("quiz length " + quiz.length)
     var h2 = document.createElement ("h2") 
         h2.textContent = quiz[questionNum].question
         askQuestion.appendChild(h2);
@@ -106,7 +116,6 @@ function next(){
          
 }
 
-console.log(remainingTime)
 //function for when timelimit reached or no more questions to record high score. 
 function highScore(){
     inputName.style.display = "initial"
@@ -120,24 +129,24 @@ function highScore(){
     bigButton.innerHTML = 'Submit'
     
     clearTimeout(highScore)
-    console.log('input name: ' + inputName.value +" " +'score: ' + score)
-    // recordHighScore()
+    console.log('input initials: ' + inputName.value +" " +'score: ' + score)
 }
 
+// function to record high score 
 function recordHighScore(){
     var liName = document.createElement ("p")
         liName.textContent = inputName + score
-        scoreBoard.innerHTML = ('Name: ' + inputName.value +" " +'Score: ' + score)
-        //return 'input name: ' + inputName.value +" " +'score: ' + score
+        scoreBoard.innerHTML = ('Name: ' + inputName.value +"           " +'Score: ' + score)
+        localStorage.setItem("score",score)
+        localStorage.setItem("inputName",inputName)
+        
 }
 
-//  myButton.addEventListener("click", countdown );
 
 //start quiz
  button2.addEventListener("click", function(){
     countdown ()
     next ()
-    //recordHighScore ()
  })
 
  bigButton.addEventListener('click', function(){
