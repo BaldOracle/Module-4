@@ -1,5 +1,5 @@
-# Module-4-Challenge
-Module 4 challenge
+# Timed Quiz
+
 
 ## Description
 
@@ -48,4 +48,4 @@ SOFTWARE.
 
 <img src="Assets\Screenshot.jpg" alt="Screenshot">
 
-[deploy-link](https://baldoracle.github.io/Module-4/)
+[deploy-link](https://baldoracle.github.io/Timed-Quiz/)
