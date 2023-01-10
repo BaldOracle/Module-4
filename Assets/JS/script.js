@@ -15,6 +15,7 @@ var saveName = "The Man"
 var quiz = [];
 var questionNum = -1
 var score = 0
+//set timer for quiz
 var remainingTime = 25
 
 //quiz question array https://www.w3schools.com/quiztest

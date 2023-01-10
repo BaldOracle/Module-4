@@ -1,11 +1,10 @@
 /* create box */
 body {
-    /* background-color: orange; */
     display:block;
     margin: auto;
     width: 50%;
     height: 50%;
-    border: 10px solid green;
+    border: 10px solid rgb(236, 186, 21);
     padding: 50px;
     text-align: center;
 }
