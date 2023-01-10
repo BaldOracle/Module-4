@@ -17,22 +17,32 @@ var questionNum = -1
 var score = 0
 var remainingTime = 25
 
-//quiz question array
+//quiz question array https://www.w3schools.com/quiztest
 quiz = [
     {
-        question: 'How are you?',
-        options: ['Good', 'Bad'],
-        answer: 'Good'
+        question: 'Inside which HTML element do we put the JavaScript?',
+        options: ['<script>', '<javascript>', '<js>', '<scripting>'],
+        answer: '<script>'
     },
     {
-        question: 'How much wood would a wood chuck chuck if a wood chuck could chuck wood?',
-        options: ['all of it', 'some of it', 'most of it'],
-        answer: 'all of it'
+        question: 'The external JavaScript file must contain the <script> tag.',
+        options: ['True', 'False'],
+        answer: 'False'
     },
     {
-        question: "If Tom's mom had 4 children: Nickle, Dime, and Quarter. What is the fourth childs name?",
-        options: ['Penny', 'Quarter', 'and', 'Tom'],
-        answer: 'Tom'
+        question: "How do you write 'Hello World' in an alert box?",
+        options: ["msg('Hello World');", "alert('Hello World);",  "alerBox('Hello World')", 'msgBox("Hello World");'],
+        answer: "alert('Hello World);"
+    },
+    {
+        question: 'How do you create a function in JavaScript?',
+        options: ['function = myFunction()', 'function:myFunction()','Function myFunction()' ],
+        answer: 'Function myFunction()'
+    },
+    {
+        question: 'How to write an IF statement in JavaScript?',
+        options: ['if (i==5)', 'if i==5 then', 'if i=5', 'if i=5 then'],
+        answer:'if (i==5)'
     }
 ]
 
