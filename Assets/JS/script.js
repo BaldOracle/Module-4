@@ -16,7 +16,7 @@ var quiz = [];
 var questionNum = -1
 var score = 0
 //set timer for quiz
-var remainingTime = 25
+var remainingTime = 60
 
 //quiz question array https://www.w3schools.com/quiztest
 quiz = [
@@ -93,7 +93,7 @@ function checkAnswer () {
         scoreBoard.innerHTML = 'Correct'
         // console.log(score)
     } else {
-        remainingTime -=5
+        remainingTime -=10
         scoreBoard.innerHTML = 'Wrong'
     } 
     //delay to show the answer clicked and to show if answer is right or wrong
